@@ -3,10 +3,18 @@ using UnityEngine;
 
 public class GamePlayStateManager  : StateManager
 {
+    #region enum
     private enum States
     {
         PRESTART,PLAYING,OVER
     }
+    
+    
+
+    #endregion
+
+    #region Serialize
+    
     [SerializeField]private ObstacleManager ObstacleManager;
     [SerializeField]private ScoreManager ScoreManager;
     [SerializeField]private PlayerInputControl playerInputControl;
@@ -14,10 +22,19 @@ public class GamePlayStateManager  : StateManager
     [SerializeField] private ResultUI _resultUIPrefab;
     [SerializeField]private AudioClip _bgm;
     [SerializeField]private AudioClip _overBGM;
+    
+    #endregion
+
+    #region private
+    
     private UIControl tapUI;
     private ResultUI _resultUI;
     
     private States state;
+
+    #endregion
+    
+    #region state methods
     public override void InitState()
     {
         ScoreManager.Init();
@@ -43,25 +60,15 @@ public class GamePlayStateManager  : StateManager
         ObstacleManager.ClearObstacle();
         GameManager.Instance.Player.Reset();
     }
+    
+    #endregion
 
-    public void Reset()
-    {
-        state = States.PRESTART;
-        playerInputControl.enabled = true;
-        
-        tapUI.Show();
-        _resultUI.Hide();
-        
-        ObstacleManager.ClearObstacle();
-        ScoreManager.StartScore();
-        GameManager.Instance.Player.Reset();
-    }
-
+    #region public methods
+    
     public void AddScore()
     {
         ScoreManager.AddScore();
     }
-
     public void PlayState()
     {
         if(state!= States.PRESTART) return;
@@ -71,7 +78,6 @@ public class GamePlayStateManager  : StateManager
         tapUI.Hide();
         
     }
-    
     public  void GameOver()
     {
         if(state!= States.PLAYING) return;
@@ -85,6 +91,26 @@ public class GamePlayStateManager  : StateManager
         _resultUI.SetScore( ScoreManager.Score);
         _resultUI.Show();
     }
+
+    #endregion
+    
+    #region private methods
+
+    private void Reset()
+    {
+        state = States.PRESTART;
+        playerInputControl.enabled = true;
+        
+        tapUI.Show();
+        _resultUI.Hide();
+        
+        ObstacleManager.ClearObstacle();
+        ScoreManager.StartScore();
+        GameManager.Instance.Player.Reset();
+    }
+
+
+    #endregion
 }
 
 
