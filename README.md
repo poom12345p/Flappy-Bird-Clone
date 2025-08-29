@@ -14,7 +14,7 @@ graph TD;
     ScoreManager-->ScoreUI
 ```
 This Diagram show how each class Relate to each other,class below will be controled by above class
-##  Sigleton
+##  Sigleton and GameManeger
 ```mermaid
 classDiagram
     BaseSingleton <|-- GameManager
@@ -68,7 +68,7 @@ class IPoolable{
     - Don't need to manage core logic of Pooling system
 - Cons
     - performance are base on Unity Engine.
-## State Manager 
+## Game Flow
 ```mermaid
 classDiagram
     GameManager --> StateManager
