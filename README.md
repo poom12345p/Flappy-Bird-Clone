@@ -93,4 +93,14 @@ classDiagram
     - easy to add or remove states in-game
 - Cons
     - If the previous state is not managed properly, it may cause bugs in subsequent states.
+-Alternative
+    - using scene base(by game loop one scene is enogh for this game)
+ ## Saving Methods
+ save by using Playerpref
+ - Pros
+    - easy to implement
+- Cons
+    -hard to manage large and complicate save data
+-Alternative
+ 
 
