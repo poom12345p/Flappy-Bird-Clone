@@ -63,7 +63,11 @@ class IPoolable{
 ### ObjectPoolManager
 - I modify UnityObjectPool,to be more friendly to use with IPoolable interface and sigleton.
 - ObjectPoolManager Manages reusable objects through pooling, avoiding costly Instantiate/Destroy operations.
-- 
+- Pros
+    - ObjectPoolManager improves performance by reducing Instantiate/Destroy calls.
+    - Don't need to manage core logic of Pooling system
+- Cons
+    - performance are base on Unity Engine.
 ## State Manager 
 ```mermaid
 classDiagram
@@ -83,9 +87,10 @@ classDiagram
 - each state are in-dependencies with each orther.
 - each state will create object,UI, etc for it own once enter the state.
 - Pros
-    - preventing loading assets on start game, provide faster start-up
+    - preventing loading assets on start game, provide faster start-up game
+    - can be improve futhermore using addressable 
     - easy to scope state behaveiver
     - easy to add or remove states in-game
 - Cons
-    - a bit hard to test
+    - If the previous state is not managed properly, it may cause bugs in subsequent states.
 
