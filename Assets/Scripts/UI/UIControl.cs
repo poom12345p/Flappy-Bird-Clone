@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
 {
+    public Canvas Canvas=>_canvas;
     [SerializeField] protected Canvas _canvas;
     [SerializeField] protected GraphicRaycaster _raycaster;
     [SerializeField]protected CanvasGroup _canvasGroup;
     private Tween _tween;
+    
     
 
     private void Awake()

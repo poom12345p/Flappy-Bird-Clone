@@ -68,14 +68,14 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f44db02f0a42e34b8e9753853f5f9e3, type: 2}
-  m_sharedMaterial: {fileID: 5960330862775455649, guid: 5f44db02f0a42e34b8e9753853f5f9e3, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 83aee9657f3adc5449590e3959d42389, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287523839
-  m_fontColor: {r: 1, g: 0.41960788, b: 0.5568628, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -278,3 +278,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiControl: {fileID: 3650939524538144136}
   _scoreText: {fileID: 5915032827660624530}
+  _TapText: {fileID: 0}

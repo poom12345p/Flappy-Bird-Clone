@@ -9,7 +9,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]private Rigidbody2D _rigidbody;
     [SerializeField]private Collider2D _collider;
     [SerializeField]private float _force;
-
+    [SerializeField]AudioClip _flapSound;
+    [SerializeField]AudioClip _deathSound;
     public void Reset()
     {
         _collider.isTrigger = true;
@@ -26,6 +27,7 @@ public class PlayerControl : MonoBehaviour
     {
         _rigidbody.linearVelocity = Vector2.zero;
         _rigidbody.AddRelativeForce(transform.up  * _force, ForceMode2D.Impulse);
+       SoundManager.Instance.PlaySound(_flapSound);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,7 +43,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Dead()
     {
-       // m_Tap.action.Disable();
+        SoundManager.Instance.PlaySound(_deathSound);
         _collider.isTrigger = false;
     }
 }

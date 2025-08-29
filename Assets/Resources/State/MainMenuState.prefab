@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainUIPrefab: {fileID: 1023362022415050768, guid: 1ca745d90d5238c49b6780d698005d3c, type: 3}
+  MainMenuBGM: {fileID: 8300000, guid: c60696e053aff234c91a3e21ee29e12a, type: 3}

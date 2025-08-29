@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8158471709737875453}
   - component: {fileID: 1832211043165682807}
   - component: {fileID: 5281125856429544759}
+  - component: {fileID: 600359415782414328}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -74,10 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c1f40617b64454f98b15358592120d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Tap: {fileID: -1877082518023366495, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   _rigidbody: {fileID: 8158471709737875453}
   _collider: {fileID: 5281125856429544759}
   _force: 4
+  flapSound: {fileID: 0}
 --- !u!58 &5281125856429544759
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,6 +115,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.2
+--- !u!114 &600359415782414328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837203689510703488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18ea4167ddc4b74086cfe6a716883d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 6a4fca4f8a5c88542a1766d1a8b6429f, type: 3}
 --- !u!1 &3283775495878824491
 GameObject:
   m_ObjectHideFlags: 0

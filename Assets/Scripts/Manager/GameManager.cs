@@ -19,6 +19,7 @@ public class GameManager : BaseSingleton<GameManager>
     private readonly Dictionary<Type,StateManager> _stateManagers = new Dictionary<Type,StateManager>();
     private StateManager _currentState;
     
+    
     void Start()
     {
         _scoreSaveControl= new ScoreSaveControl();

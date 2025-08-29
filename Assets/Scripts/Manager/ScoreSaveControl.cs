@@ -22,6 +22,6 @@ public class ScoreSaveControl
 
     public void LoadHighScore()
     {
-        HighScore = PlayerPrefs.GetInt(HIGH_SCORE);
+        HighScore =PlayerPrefs.HasKey(HIGH_SCORE)?PlayerPrefs.GetInt(HIGH_SCORE):0;
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5015101904370027272}
   - component: {fileID: 1301498638373690922}
   - component: {fileID: 2538498104735204855}
+  - component: {fileID: 8242267530612160796}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -120,7 +121,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1301498638373690922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8242267530612160796}
+        m_TargetAssemblyTypeName: SoundPlayer, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8242267530612160796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534460038229223870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18ea4167ddc4b74086cfe6a716883d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 26d4a23e0d78a074bb42f61e4c1c0ee5, type: 3}
 --- !u!1 &5696346195708883242
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,14 +215,14 @@ MonoBehaviour:
   m_text: Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f44db02f0a42e34b8e9753853f5f9e3, type: 2}
-  m_sharedMaterial: {fileID: 5960330862775455649, guid: 5f44db02f0a42e34b8e9753853f5f9e3, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 83aee9657f3adc5449590e3959d42389, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287523839
-  m_fontColor: {r: 1, g: 0.4198113, b: 0.5583081, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

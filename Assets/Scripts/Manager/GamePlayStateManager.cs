@@ -12,7 +12,8 @@ public class GamePlayStateManager  : StateManager
     [SerializeField]private PlayerInputControl playerInputControl;
     [SerializeField]private UIControl _tapUIPrefab;
     [SerializeField] private ResultUI _resultUIPrefab;
-    
+    [SerializeField]private AudioClip _bgm;
+    [SerializeField]private AudioClip _overBGM;
     private UIControl tapUI;
     private ResultUI _resultUI;
     
@@ -32,6 +33,7 @@ public class GamePlayStateManager  : StateManager
     public override void EnterState()
     {
         Reset();
+        SoundManager.Instance.PlayBGM( _bgm);
     }
 
     public override void ExitState()
@@ -74,7 +76,7 @@ public class GamePlayStateManager  : StateManager
     {
         if(state!= States.PLAYING) return;
         state = States.OVER;
-        
+        SoundManager.Instance.PlayBGM( _overBGM);
         GameManager.Instance.Player.Dead();
         _resultUI.Show();
         ScoreManager.GameOver();

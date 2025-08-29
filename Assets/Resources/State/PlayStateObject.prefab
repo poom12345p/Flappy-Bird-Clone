@@ -54,6 +54,8 @@ MonoBehaviour:
   playerInputControl: {fileID: 1431934112877266512}
   _tapUIPrefab: {fileID: 6348476453508043108, guid: 5fc53bcfea253b44c8f05a9557bbad1e, type: 3}
   _resultUIPrefab: {fileID: 6315369093934286412, guid: 44577127a13934b41bd9b0e0aa451f5e, type: 3}
+  _bgm: {fileID: 8300000, guid: d01d4affdadf44d4ebbe813b7be4b3cc, type: 3}
+  _overBGM: {fileID: 8300000, guid: 5bf6acb933914d648a7056812d4e1124, type: 3}
 --- !u!114 &365833309964807551
 MonoBehaviour:
   m_ObjectHideFlags: 0
