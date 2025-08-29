@@ -20,6 +20,7 @@ classDiagram
     BaseSingleton <|-- GameManager
     BaseSingleton <|-- SoundManager
     BaseSingleton <|-- ObjectPoolManager
+    ObjectPoolManager --> IPoolable
     class  BaseSingleton{
       +T Instance
       +OnInitialize()
@@ -37,6 +38,12 @@ classDiagram
       +PlayBGM(AudioClip)
       +PlaySound(AudioClip)
     }
+class IPoolable{
+   +GameObject OriginPref
+   +OnGet()
+   +OnRelease()
+   +OnDestroy()
+}
 ```
 - I decided to implement a base Singleton class to simplify the creation of singleton-behavior managers across the game. The main managers that use this pattern are:
     - GameManager → Controls overall game flow and sections (state management).
@@ -46,8 +53,17 @@ classDiagram
     - Using Sigleton make it s easly to control and acess variable.
 - Cons
     - need to understart what class should be or shouldn't be sigleton, and need to careful with memory leak and initalize sequnce if not manager properly.
-## SoundManager
-## ObjectPoolManager
+### SoundManager
+- SoundManager uses object pooling to manage AudioSource components
+- Pros
+    - preventing excessive and unmanageable instances. Any changes to sound behavior can be applied by modifying only the SoundManager
+    - easy to play audio.
+- Cons
+    - need to understart how to use SoundManeger properly
+### ObjectPoolManager
+- I modify UnityObjectPool,to be more friendly to use with IPoolable interface and sigleton.
+- ObjectPoolManager Manages reusable objects through pooling, avoiding costly Instantiate/Destroy operations.
+- 
 ## State Manager 
 ```mermaid
 classDiagram
@@ -57,10 +73,19 @@ classDiagram
     class StateManager{
       +InitState()
       +EnterState()
-      +ExitState()()
+      +ExitState()
     }
     class  GameManager{
       -GoToState(StateManage)
     }
 ```
+- This Game will run base on states ,controled by Gamaneger.
+- each state are in-dependencies with each orther.
+- each state will create object,UI, etc for it own once enter the state.
+- Pros
+    - preventing loading assets on start game, provide faster start-up
+    - easy to scope state behaveiver
+    - easy to add or remove states in-game
+- Cons
+    - a bit hard to test
 
