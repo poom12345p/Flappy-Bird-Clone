@@ -22,6 +22,7 @@ classDiagram
     BaseSingleton <|-- ObjectPoolManager
     class  BaseSingleton{
       +T Instance
+      +OnInitialize()
     }
     class  GameManager{
       +StartGame()
@@ -32,8 +33,34 @@ classDiagram
       +Get(IPoolable)
       +Release(IPoolable)
     }
+     class SoundManager{
+      +PlayBGM(AudioClip)
+      +PlaySound(AudioClip)
+    }
 ```
-I decided to implement a base Singleton class to simplify the creation of singleton-behavior managers across the game. The main managers that use this pattern are:
-- GameManager → Controls overall game flow and sections (state management).
-- SoundManager → Handles background music, SFX, and volume settings.
-- ObjectPoolManager → Manages reusable objects through pooling, avoiding costly Instantiate/Destroy operations.
+- I decided to implement a base Singleton class to simplify the creation of singleton-behavior managers across the game. The main managers that use this pattern are:
+    - GameManager → Controls overall game flow and sections (state management).
+    - SoundManager → Handles background music, SFX, and volume settings.
+    - ObjectPoolManager → Manages reusable objects through pooling, avoiding costly Instantiate/Destroy operations.
+- Pros
+    - Using Sigleton make it s easly to control and acess variable.
+- Cons
+    - need to understart what class should be or shouldn't be sigleton, and need to careful with memory leak and initalize sequnce if not manager properly.
+## SoundManager
+## ObjectPoolManager
+## State Manager 
+```mermaid
+classDiagram
+    GameManager --> StateManager
+    StateManager <|-- GamePlayStateManager
+    StateManager <|-- MainMenuStateManager
+    class StateManager{
+      +InitState()
+      +EnterState()
+      +ExitState()()
+    }
+    class  GameManager{
+      -GoToState(StateManage)
+    }
+```
+
