@@ -14,7 +14,7 @@ graph TD;
     ScoreManager-->ScoreUI
 ```
 This Diagram show how each class Relate to each other,class below will be controled by above class
-##  Sigleton
+##  Sigleton and GameManeger
 ```mermaid
 classDiagram
     BaseSingleton <|-- GameManager
@@ -68,7 +68,7 @@ class IPoolable{
     - Don't need to manage core logic of Pooling system
 - Cons
     - performance are base on Unity Engine.
-## State Manager 
+## Game Flow
 ```mermaid
 classDiagram
     GameManager --> StateManager
@@ -93,4 +93,22 @@ classDiagram
     - easy to add or remove states in-game
 - Cons
     - If the previous state is not managed properly, it may cause bugs in subsequent states.
+-Alternative
+    - using scene base(by game loop one scene is enogh for this game)
+ ## Saving Methods
+ save by using Playerpref
+- Pros
+    - easy to implement
+- Cons
+    - hard to manage large and complicate save data
+## Object animation and Movement
+ - Using Primetween
+- Pros
+    - easy to implement
+    - primetween ate versatile and can be use for wide range of motion
+- Cons
+    - need to understand tween behavier.
+
+  
+ 
 
