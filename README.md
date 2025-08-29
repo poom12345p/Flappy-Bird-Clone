@@ -107,7 +107,7 @@ classDiagram
     - easy to implement
     - primetween ate versatile and can be use for wide range of motion
 - Cons
-    - hard to manage large and complicate save data
+    - need to understand tween behavier.
 
   
  
