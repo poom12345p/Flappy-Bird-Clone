@@ -97,10 +97,18 @@ classDiagram
     - using scene base(by game loop one scene is enogh for this game)
  ## Saving Methods
  save by using Playerpref
- - Pros
+- Pros
     - easy to implement
 - Cons
-    -hard to manage large and complicate save data
--Alternative
+    - hard to manage large and complicate save data
+## Object animation and Movement
+ - Using Primetween
+- Pros
+    - easy to implement
+    - primetween ate versatile and can be use for wide range of motion
+- Cons
+    - hard to manage large and complicate save data
+
+  
  
 
